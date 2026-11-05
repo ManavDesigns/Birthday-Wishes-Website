@@ -1,0 +1,50 @@
+.scene-cloud {
+  animation: scene-drift 28s ease-in-out infinite alternate;
+}
+
+.scene-flutter {
+  animation: scene-flutter 5s ease-in-out infinite;
+}
+
+.scene-flutter--late {
+  animation-delay: -2.5s;
+}
+
+.scene-twinkle {
+  animation: scene-twinkle 3s ease-in-out infinite;
+}
+
+.scene-twinkle--late {
+  animation-delay: -1.5s;
+}
+
+@keyframes scene-drift {
+  from {
+    transform: translateX(-30px);
+  }
+  to {
+    transform: translateX(40px);
+  }
+}
+
+@keyframes scene-flutter {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(-4deg);
+  }
+  50% {
+    transform: translate(12px, -14px) rotate(6deg);
+  }
+}
+
+@keyframes scene-twinkle {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}

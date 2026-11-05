@@ -1,0 +1,156 @@
+.finale {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(5rem, 12vw, 8rem) 1rem;
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+  background: linear-gradient(180deg, #ffd6e3 0%, #ffeef4 55%, #fff8f0 100%);
+}
+
+.finale__hearts,
+.finale__confetti,
+.finale__balloons {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.finale__heart {
+  position: absolute;
+  bottom: -10%;
+  opacity: 0;
+  animation: heart-rise linear infinite;
+}
+
+.finale__heart svg {
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+}
+
+.finale__balloon {
+  position: absolute;
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+.finale__balloon svg {
+  display: block;
+  width: clamp(48px, 7vw, 72px);
+  height: auto;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -5%;
+  width: 9px;
+  height: 15px;
+  border-radius: 3px;
+  animation: confetti-fall linear infinite;
+}
+
+.finale__frame {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 680px;
+  width: 100%;
+  padding: clamp(1.75rem, 5vw, 3.5rem) clamp(1.25rem, 5vw, 3.5rem);
+  background: #ffffff;
+  border: 3px dashed var(--blush);
+  border-radius: 28px;
+  box-shadow: 0 24px 50px rgba(212, 63, 99, 0.2);
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1.2s ease 0.2s, transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s;
+  box-sizing: border-box;
+}
+
+.finale.is-visible .finale__frame {
+  opacity: 1;
+  transform: none;
+}
+
+.finale__sticker {
+  position: absolute;
+  top: -24px;
+  right: -18px;
+}
+
+.finale__art {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(0.5rem, 3vw, 1.5rem);
+}
+
+.finale__art svg {
+  display: block;
+  width: clamp(72px, 20vw, 120px);
+  height: auto;
+}
+
+.finale__art .finale__cake {
+  width: clamp(110px, 28vw, 170px);
+}
+
+.finale__bear {
+  animation: float-soft 5s ease-in-out infinite;
+}
+
+.finale__bear--late {
+  animation-delay: -2.5s;
+}
+
+.finale__message {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.finale__message p {
+  font-size: clamp(1.1rem, 2.3vw, 1.3rem);
+  color: var(--ink);
+}
+
+.finale__signature {
+  font-family: var(--font-hand);
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  color: #c53a5f;
+}
+
+.finale__frame .btn-pink {
+  margin-top: 0.5rem;
+}
+
+@keyframes heart-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(-8deg) scale(0.8);
+  }
+  15% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-120vh) rotate(12deg) scale(1.1);
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(var(--sway, 0px), 115vh, 0) rotate(720deg);
+  }
+}

@@ -1,0 +1,135 @@
+.music-bar {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid var(--blush);
+  box-shadow: 0 4px 18px rgba(212, 63, 99, 0.18);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s ease;
+}
+
+.music-bar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(212, 63, 99, 0.25);
+}
+
+.music-btn {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #fff0f5;
+  color: var(--soft-red);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.music-btn:hover {
+  background: var(--soft-red);
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.music-btn:active {
+  transform: scale(0.95);
+}
+
+.music-info {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 0.4rem 0 0.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.music-waves {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 14px;
+}
+
+.music-wave {
+  width: 3px;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--soft-red);
+  transform-origin: bottom;
+  animation: music-wave 1s ease-in-out infinite alternate;
+}
+
+.music-wave:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.music-wave:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.music-wave:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.music-wave.is-paused {
+  animation: none;
+  height: 4px;
+  background: #d4a5b5;
+}
+
+@keyframes music-wave {
+  0% {
+    height: 4px;
+  }
+  100% {
+    height: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .music-bar {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.3rem 0.4rem;
+  }
+
+  .music-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .music-info {
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .music-bar {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.35rem;
+    gap: 0.35rem;
+  }
+
+  .music-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Hide the text label on very small screens to avoid overflow */
+  .music-info span {
+    display: none;
+  }
+}
+
