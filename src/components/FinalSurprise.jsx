@@ -91,8 +91,8 @@ export default function FinalSurprise({ onCelebrateAgain }) {
         <p className="eyebrow">A Special Celebration</p>
         <h2 className="section-title">{birthday.finalTitle}</h2>
         <div className="finale__message">
-          {birthday.finalMessage.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+          {birthday.finalMessage.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
           ))}
         </div>
         <p className="finale__signature">{birthday.signature}</p>

@@ -253,12 +253,13 @@ export const birthday = {
     title: 'Romantic Birthday Melody',
   },
 
-  finalTitle: 'Happy Birthday, Madam Ji! 🎉🎂',
+  finalTitle: 'Happy Birthday, K! 🎉🎂',
   finalSubtitle: 'Wishing you a day as wonderfully special as you are ✨',
   finalMessage: [
-    'Every year I find a new reason to be grateful that you are in my life. You turn ordinary days into the sweetest moments.',
-    'May this year bring you endless reasons to smile, beautiful adventures, peace, laughter, and all your dreams fulfilled.',
-    'Enjoy your special day to the fullest, Madam Ji! 🌸💖',
+    'I honestly don’t know how to fully put my feelings into words today, but you are the most precious and irreplaceable person in my life. 💖',
+    'From wo poore din ki non-stop chats to wo lambi lambi calls par baatein, every single memory with you is something I treasure deeply. 📞💬',
+    'I know I’ve made my share of mistakes along the way, and I am so deeply sorry for all of them. Thank you for your patience and for being my constant through it all. 🥺❤️',
+    'May this year bring you endless peace, warm smiles, strength, and all the happiness your heart can hold. You deserve every beautiful thing in this world. 🌸✨',
   ],
-  signature: 'With all my warmest wishes, always 💌',
+  signature: 'With all my love and warmest wishes, always 💕',
 };
